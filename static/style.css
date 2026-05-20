@@ -1,75 +1,90 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-
 body {
-    margin: 0;
     background-color: rgb(47, 43, 79);
     font-family: "Roboto", sans-serif;
     color: white;
     min-height: 100vh;
+}
+
+/* HEADER */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 1rem;
+
+    background-color: rgb(34, 35, 59);
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    z-index: 1000;
+}
+
+header ul {
+    display: flex;
+    gap: 20px;
+
+    list-style: none;
 }
 
 a {
     color: white;
     text-decoration: none;
+
+    transition: 0.2s;
 }
 
-header {
-    position: absolute;
-    flex-direction: row;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(34, 35, 59);
-    z-index: 1000;
-    
+a:hover {
+    color: rgb(138, 255, 120);
 }
 
-header ul{
-    gap: 15px;
-    list-style: none;
+/* LAYOUT */
+
+.about-section {
     display: flex;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 40px;
+
+    width: 100%;
+
+    padding: 120px 40px 40px;
 }
+
+/* ESQUERDA */
 
 .aboutme {
+    width: 50%;
+
     display: flex;
-    gap: 30px;
-    justify-content: center;
-    align-items: stretch;
     flex-wrap: wrap;
-    padding: 40px;
+
+    gap: 30px;
 }
 
-.tec img {
-    height: 10vh;
-}
-
-.tec li {
-    list-style-type: none;
-}
+/* CARDS */
 
 .perfil,
-.skills {
+.skills,
+.projects-display {
     background-color: rgb(59, 59, 108);
-    padding: 25px;
+
     border-radius: 18px;
-    width: 320px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+    padding: 25px;
 
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 
@@ -77,53 +92,124 @@ header ul{
 }
 
 .perfil:hover,
-.skills:hover {
+.skills:hover,
+.projects-display:hover {
     transform: translateY(-5px);
+
     background-color: rgb(70, 70, 130);
 }
 
+/* PERFIL */
+
+.perfil {
+    width: 320px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .perfil h4,
-.skills h4 {
-    font-size: 24px;
+.skills h4,
+.projects-display h2 {
     margin-bottom: 20px;
+
+    font-size: 24px;
+
     text-transform: uppercase;
     letter-spacing: 2px;
+
     color: rgb(200, 200, 255);
 }
 
 .perfil img {
     width: 180px;
     height: 180px;
-    border-radius: 50%;
+
     object-fit: cover;
+
+    border-radius: 50%;
 
     border: 4px solid rgb(138, 255, 120);
 
     display: block;
-    margin: 0 auto;
+
+    margin: 0 auto 15px;
 }
 
-.skills p {
-    margin-top: 10px;
-    line-height: 1.8;
-    font-size: 18px;
-    color: rgb(220, 220, 255);
+.perfil p {
+    text-align: center;
+
+    margin-top: 8px;
 }
 
-.contato {
+/* SKILLS */
+
+.skills {
+    width: 320px;
+}
+
+.skills ul {
+    padding-left: 20px;
+}
+
+.skills li {
+    margin-bottom: 10px;
+}
+
+/* TECNOLOGIAS */
+
+.tec ol {
     display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
     justify-content: center;
-    align-items: flex-end;
+
+    list-style: none;
 }
+
+.tec img {
+    height: 70px;
+
+    transition: 0.3s;
+}
+
+.tec img:hover {
+    transform: scale(1.1);
+}
+
+/* PROJETOS */
+
+.projects-display {
+    width: 45%;
+
+    min-height: 700px;
+}
+
+/* RESPONSIVO */
 
 @media (max-width: 768px) {
-    .aboutme {
+
+    .about-section {
         flex-direction: column;
+
         align-items: center;
+    }
+
+    .aboutme,
+    .projects-display {
+        width: 100%;
+    }
+
+    .aboutme {
+        justify-content: center;
     }
 
     .perfil,
     .skills {
-        width: 90%;
+        width: 100%;
     }
 }
