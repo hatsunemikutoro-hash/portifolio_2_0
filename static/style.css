@@ -92,8 +92,7 @@ a:hover {
 }
 
 .perfil:hover,
-.skills:hover,
-.projects-display:hover {
+.skills:hover {
     transform: translateY(-5px);
 
     background-color: rgb(70, 70, 130);
@@ -185,8 +184,24 @@ a:hover {
 
 .projects-display {
     width: 45%;
-
     min-height: 700px;
+}
+
+.project_view {
+    margin-top: 1rem;
+    border-radius: 20px;
+    box-shadow: 0px 0.5px 10px 1px black;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.project_view:hover {
+    transform: scale(1.03);
+}
+
+.project-overview p {
+    margin-top: 2px;
+    text-align: center;
 }
 
 /* RESPONSIVO */
